@@ -76,7 +76,7 @@ const submit = () => {
                 </div>
                 <div>
                     <Link v-if="canResetPassword" :href="route('password.request')"
-                        class=" underline text-lg text-indigo-600 font-semibold hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        class="underline text-lg text-indigo-600 font-semibold hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                     Olvidé mi contraseña
                     </Link>
                 </div>
