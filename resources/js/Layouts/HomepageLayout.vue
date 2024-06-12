@@ -42,7 +42,7 @@ const showingNavigationDropdown = ref(false);
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16">
-                        <div class="flex">
+                        <div :class="{ 'hidden': showingNavigationDropdown }" class="flex items-center gap-4">
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
                                 <Link :href="route('dashboard')">
@@ -50,10 +50,10 @@ const showingNavigationDropdown = ref(false);
                                 </Link>
                             </div>
                             <div class="space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                                <NavLink :href="route('login')"> Log in </NavLink>
+                                <NavLink :href="route('login')"> Inicia sesión </NavLink>
                             </div>
                             <div class="space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                                <NavLink :href="route('register')"> Register </NavLink>
+                                <NavLink :href="route('register')"> Regístrate </NavLink>
                             </div>
                         </div>
                         <!-- Hamburger -->
@@ -79,13 +79,17 @@ const showingNavigationDropdown = ref(false);
                 </div>
                 <!-- Responsive Settings Options -->
                 <div :class="{ 'block': showingNavigationDropdown, 'hidden': !showingNavigationDropdown }"
-                    class="sm:hidden">
-                    <h2>Pedir mi credito ya</h2>
-                    <h2>Requisitos</h2>
+                    class="sm:hidden bg-indigo-600 p-4">
+                    <div class="grid grid-flow-row gap-8 text-white justify-center">
+                        <h2>Pedir mi credito ya</h2>
+                        <h2>Requisitos</h2>
+                        <h2>Registarme</h2>
+                        <h2>¿Cómo pagar?</h2>
+                        <h2>¿Cuánto cuesta?</h2>
+                        <h2>Ayuda</h2>
+                    </div>
                 </div>
             </nav>
-
-
             <!-- Page Content -->
             <main>
                 <slot />

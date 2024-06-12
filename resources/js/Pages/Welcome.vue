@@ -2,9 +2,9 @@
 import { Head, Link } from '@inertiajs/vue3';
 import HomepageLayout from '@/Layouts/HomepageLayout.vue';
 import Welcome from '@/Components/Welcome.vue';
+import { ref } from 'vue';
 
-
-
+const showingNavigationDropdown = ref(false);
 
 </script>
 <template>
@@ -19,7 +19,8 @@ import Welcome from '@/Components/Welcome.vue';
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <Welcome />
+                    <Welcome v-if="!showingNavigationDropdown" />
+                    <Welcome v-else />
                 </div>
             </div>
         </div>
