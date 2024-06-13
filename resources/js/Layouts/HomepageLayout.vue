@@ -7,6 +7,9 @@ import Dropdown from '@/Components/Dropdown.vue';
 import DropdownLink from '@/Components/DropdownLink.vue';
 import NavLink from '@/Components/NavLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
+import AppFooter from '../Components/AppFooter.vue';
+
+
 
 defineProps({
     canLogin: {
@@ -33,7 +36,6 @@ const showingNavigationDropdown = ref(false);
 </script>
 <template>
     <div>
-
 
         <Head :title="title" />
         <Banner />
@@ -73,7 +75,6 @@ const showingNavigationDropdown = ref(false);
                                 </svg>
                             </button>
                         </div>
-
                     </div>
 
                 </div>
@@ -94,6 +95,9 @@ const showingNavigationDropdown = ref(false);
             <main>
                 <slot />
             </main>
+
+
         </div>
+        <AppFooter />
     </div>
 </template>

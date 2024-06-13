@@ -6,6 +6,7 @@ import { ref } from 'vue';
 
 const showingNavigationDropdown = ref(false);
 
+
 </script>
 <template>
     <HomepageLayout title="Welcome page">
@@ -15,13 +16,9 @@ const showingNavigationDropdown = ref(false);
                 Dashboard
             </h2>
         </template>
-
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <Welcome v-if="!showingNavigationDropdown" />
-                    <Welcome v-else />
-                </div>
+                <Welcome />
             </div>
         </div>
     </HomepageLayout>

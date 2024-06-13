@@ -311,6 +311,7 @@ const logout = () => {
             <main>
                 <slot />
             </main>
+            <AppFooter />
         </div>
     </div>
 </template>
