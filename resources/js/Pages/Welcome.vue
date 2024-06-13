@@ -5,12 +5,9 @@ import Welcome from '@/Components/Welcome.vue';
 import { ref } from 'vue';
 
 const showingNavigationDropdown = ref(false);
-
-
 </script>
 <template>
     <HomepageLayout title="Welcome page">
-
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Dashboard

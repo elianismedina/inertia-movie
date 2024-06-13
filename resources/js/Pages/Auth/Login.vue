@@ -9,11 +9,6 @@ import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-
-
-
-
-
 defineProps({
     canResetPassword: Boolean,
     status: String,
@@ -38,8 +33,6 @@ const submit = () => {
 <template>
 
     <Head title="Inicia sesión" />
-
-
     <AuthenticationCard>
         <template #logo>
             <AuthenticationCardLogo />
@@ -51,7 +44,6 @@ const submit = () => {
         <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
             {{ status }}
         </div>
-
         <form @submit.prevent="submit">
             <div>
                 <InputLabel for="email" value="Email" />
@@ -59,7 +51,6 @@ const submit = () => {
                     autocomplete="username" />
                 <InputError class="mt-2" :message="form.errors.email" />
             </div>
-
             <div class="mt-4">
                 <InputLabel for="password" value="Password" />
                 <TextInput id="password" v-model="form.password" type="password" class="mt-1 block w-full" required

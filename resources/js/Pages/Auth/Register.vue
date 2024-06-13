@@ -24,7 +24,6 @@ const submit = () => {
     });
 };
 </script>
-
 <template>
 
     <Head title="Register" />
@@ -41,7 +40,6 @@ const submit = () => {
                         <h1 class="text-xl font-bold">Crear tu cuenta en Lineru es gratis</h1>
                     </div>
                 </template>
-
                 <form @submit.prevent="submit">
                     <div>
                         <InputLabel for="name" value="Name" />
@@ -49,28 +47,24 @@ const submit = () => {
                             autofocus autocomplete="name" />
                         <InputError class="mt-2" :message="form.errors.name" />
                     </div>
-
                     <div class="mt-4">
                         <InputLabel for="email" value="Email" />
                         <TextInput id="email" v-model="form.email" type="email" class="mt-1 block w-full" required
                             autocomplete="username" />
                         <InputError class="mt-2" :message="form.errors.email" />
                     </div>
-
                     <div class="mt-4">
                         <InputLabel for="password" value="Password" />
                         <TextInput id="password" v-model="form.password" type="password" class="mt-1 block w-full"
                             required autocomplete="new-password" />
                         <InputError class="mt-2" :message="form.errors.password" />
                     </div>
-
                     <div class="mt-4">
                         <InputLabel for="password_confirmation" value="Confirm Password" />
                         <TextInput id="password_confirmation" v-model="form.password_confirmation" type="password"
                             class="mt-1 block w-full" required autocomplete="new-password" />
                         <InputError class="mt-2" :message="form.errors.password_confirmation" />
                     </div>
-
                     <div v-if="$page.props.jetstream.hasTermsAndPrivacyPolicyFeature" class="mt-4">
                         <InputLabel for="terms">
                             <div class="flex items-center">
@@ -88,7 +82,6 @@ const submit = () => {
                             <InputError class="mt-2" :message="form.errors.terms" />
                         </InputLabel>
                     </div>
-
                     <div class="flex flex-col mt-8 gap-4 items-center">
                         <div>
                             <PrimaryButton class="ms-4" :class="{ 'opacity-25': form.processing }"
@@ -104,13 +97,9 @@ const submit = () => {
                             Incia sesión
                             </Link>
                         </div>
-
                     </div>
                 </form>
             </AuthenticationCard>
         </div>
     </div>
-
-
-
 </template>
