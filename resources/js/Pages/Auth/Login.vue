@@ -40,37 +40,50 @@ const submit = () => {
                 <h1 class="text-xl font-bold">Inicia sesión en Lineru</h1>
             </div>
         </template>
-        <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
-            {{ status }}
-        </div>
-        <form @submit.prevent="submit" class="flex flex-col items-center justify-center mt-6">
-            <div>
-                <InputLabel for="email" value="Email" />
-                <TextInput id="email" v-model="form.email" type="email" class="mt-1" required autofocus
-                    autocomplete="username" />
-                <InputError class="mt-2" :message="form.errors.email" />
+        <div class="w-full">
+            <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
+                {{ status }}
             </div>
-            <div class="mt-4">
-                <InputLabel for="password" value="Password" />
-                <TextInput id="password" v-model="form.password" type="password" class="mt-1" required
-                    autocomplete="current-password" />
-                <InputError class="mt-2" :message="form.errors.password" />
-            </div>
-            <div class="flex flex-col mt-8 gap-4 items-center">
+            <form @submit.prevent="submit" class="flex flex-col mt-6 mb-8 items-center justify-center">
                 <div>
-                    <PrimaryButton class="w-full" :class="{ 'opacity-25': form.processing }"
-                        :disabled="form.processing">
-                        Inicia sesión
-                        <FontAwesomeIcon :icon="faArrowRight" class="px-2" />
-                    </PrimaryButton>
+                    <InputLabel for="email" value="Email" />
+                    <TextInput id="email" v-model="form.email" type="email" class="mt-1" required autofocus
+                        autocomplete="email" />
+                    <InputError class="mt-2" :message="form.errors.email" />
                 </div>
-                <div>
-                    <Link v-if="canResetPassword" :href="route('password.request')"
-                        class="underline text-lg text-indigo-600 font-semibold hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                    Olvidé mi contraseña
+                <div class="mt-4">
+                    <InputLabel for="password" value="Password" />
+                    <TextInput id="password" v-model="form.password" type="password" class="mt-1" required
+                        autocomplete="current-password" />
+                    <InputError class="mt-2" :message="form.errors.password" />
+                </div>
+                <div class="flex flex-col mt-8 gap-4">
+                    <div>
+                        <PrimaryButton class="flex justify-center" :class="{ 'opacity-25': form.processing }"
+                            :disabled="form.processing">
+                            Inicia sesión
+                            <FontAwesomeIcon :icon="faArrowRight" class="px-2" />
+                        </PrimaryButton>
+                    </div>
+                    <div class="mr-4">
+                        <Link v-if="canResetPassword" :href="route('password.request')"
+                            class="underline text-lg text-indigo-600 font-semibold hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        Olvidé mi contraseña
+                        </Link>
+                    </div>
+
+                </div>
+                <div class="flex flex-row mt-2 gap-4">
+                    <div>
+                        <p class="text-xs">¿No tienes cuenta?</p>
+                    </div>
+                    <Link :href="route('register')"
+                        class="underline text-xs text-indigo-600 font-semibold hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    Regístrate
                     </Link>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
+
     </AuthenticationCard>
 </template>

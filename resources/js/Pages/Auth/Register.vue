@@ -27,11 +27,7 @@ const submit = () => {
 <template>
 
     <Head title="Register" />
-    <div class="grid grid-cols-1 md:grid md:grid-cols-2">
-
-        <div class="bg-indigo-500">
-
-        </div>
+    <div class="grid grid-col items-center justify-center bg-slate-100">
         <div>
             <AuthenticationCard>
                 <template #logo>
@@ -40,34 +36,29 @@ const submit = () => {
                         <h1 class="text-xl font-bold">Crear tu cuenta en Lineru es gratis</h1>
                     </div>
                 </template>
-                <form @submit.prevent="submit">
+                <form @submit.prevent="submit" class="flex flex-col gap-2 items-center justify-center p-4">
                     <div>
                         <InputLabel for="name" value="Name" />
-                        <TextInput id="name" v-model="form.name" type="text" class="mt-1 block w-full" required
-                            autofocus autocomplete="name" />
+                        <TextInput id="name" v-model="form.name" type="text" class="mt-1" required autofocus
+                            autocomplete="name" />
                         <InputError class="mt-2" :message="form.errors.name" />
                     </div>
-                    <div class="mt-4">
+                    <div class="mt-2">
                         <InputLabel for="email" value="Email" />
-                        <TextInput id="email" v-model="form.email" type="email" class="mt-1 block w-full" required
+                        <TextInput id="email" v-model="form.email" type="email" class="mt-1" required
                             autocomplete="username" />
                         <InputError class="mt-2" :message="form.errors.email" />
                     </div>
-                    <div class="mt-4">
+                    <div class="mt-2">
                         <InputLabel for="password" value="Password" />
-                        <TextInput id="password" v-model="form.password" type="password" class="mt-1 block w-full"
-                            required autocomplete="new-password" />
+                        <TextInput id="password" v-model="form.password" type="password" class="mt-1" required
+                            autocomplete="new-password" />
                         <InputError class="mt-2" :message="form.errors.password" />
                     </div>
-                    <div class="mt-4">
-                        <InputLabel for="password_confirmation" value="Confirm Password" />
-                        <TextInput id="password_confirmation" v-model="form.password_confirmation" type="password"
-                            class="mt-1 block w-full" required autocomplete="new-password" />
-                        <InputError class="mt-2" :message="form.errors.password_confirmation" />
-                    </div>
-                    <div v-if="$page.props.jetstream.hasTermsAndPrivacyPolicyFeature" class="mt-4">
+
+                    <div v-if="$page.props.jetstream.hasTermsAndPrivacyPolicyFeature" class="mt-2">
                         <InputLabel for="terms">
-                            <div class="flex items-center">
+                            <div class="flex items-center ml-6">
                                 <Checkbox id="terms" v-model:checked="form.terms" name="terms" required />
 
                                 <div class="ms-2">
@@ -84,7 +75,7 @@ const submit = () => {
                     </div>
                     <div class="flex flex-col mt-8 gap-4 items-center">
                         <div>
-                            <PrimaryButton class="ms-4" :class="{ 'opacity-25': form.processing }"
+                            <PrimaryButton class="ms-4 flex justify-center" :class="{ 'opacity-25': form.processing }"
                                 :disabled="form.processing">
                                 Crear mi cuenta
                                 <FontAwesomeIcon :icon="faArrowRight" class="px-2" />

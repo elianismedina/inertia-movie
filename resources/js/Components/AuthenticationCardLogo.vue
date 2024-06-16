@@ -3,7 +3,7 @@ import { Link } from '@inertiajs/vue3';
 </script>
 
 <template>
-    <div class="flex flex-col items-center">
+    <div class="flex flex-col items-center mt-6">
         <Link :href="'/'">
         <svg class="w-16 h-16" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g transform="matrix(0.69 0 0 0.69 24 24)">
