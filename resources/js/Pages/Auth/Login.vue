@@ -40,20 +40,19 @@ const submit = () => {
                 <h1 class="text-xl font-bold">Inicia sesión en Lineru</h1>
             </div>
         </template>
-
         <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
             {{ status }}
         </div>
-        <form @submit.prevent="submit">
+        <form @submit.prevent="submit" class="flex flex-col items-center justify-center mt-6">
             <div>
                 <InputLabel for="email" value="Email" />
-                <TextInput id="email" v-model="form.email" type="email" class="mt-1 block w-full" required autofocus
+                <TextInput id="email" v-model="form.email" type="email" class="mt-1" required autofocus
                     autocomplete="username" />
                 <InputError class="mt-2" :message="form.errors.email" />
             </div>
             <div class="mt-4">
                 <InputLabel for="password" value="Password" />
-                <TextInput id="password" v-model="form.password" type="password" class="mt-1 block w-full" required
+                <TextInput id="password" v-model="form.password" type="password" class="mt-1" required
                     autocomplete="current-password" />
                 <InputError class="mt-2" :message="form.errors.password" />
             </div>

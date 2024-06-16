@@ -35,31 +35,35 @@ const showingNavigationDropdown = ref(false);
 
         <Head :title="title" />
         <Banner />
-        <div class="min-h-screen">
-            <nav class="bg-indigo-600 text-white border-b border-gray-100">
+        <div class="min-h-screen bg-gray-100">
+            <nav class="bg-white border-b border-gray-100">
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="flex flex-row-reverse h-16">
-                        <div :class="{ 'hidden': showingNavigationDropdown }" class="flex gap-4 mt-4">
+                    <div class="h-16">
+                        <div :class="{ 'hidden': showingNavigationDropdown }"
+                            class="flex flex-row justify-between gap-6">
                             <!-- Logo -->
-                            <div>
+                            <div class="shrink-0 flex items-center mt-2">
                                 <Link :href="route('dashboard')">
-                                <ApplicationMark class="flex h-10 w-auto" />
+                                <ApplicationMark class="block h-9 w-auto" />
                                 </Link>
                             </div>
-                            <div class="space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                                <NavLink :href="route('dashboard')"> Pedir crédito ya </NavLink>
+
+                            <!-- Navigation Links -->
+                            <div class="space-x-8 sm:-my-px sm:ms-10 sm:flex mt-4">
+                                <NavLink :href="route('login')" :active="route().current('dashboard')">
+                                    Incia sesión
+                                </NavLink>
                             </div>
-                            <div class="space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                                <NavLink :href="route('register')"> Regístrate </NavLink>
-                            </div>
-                            <div class="space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                                <NavLink :href="route('login')"> Inicia sesión </NavLink>
+                            <div class="space-x-8 sm:-my-px sm:ms-10 sm:flex mt-4">
+                                <NavLink :href="route('register')" :active="route().current('dashboard')">
+                                    Regístrate
+                                </NavLink>
                             </div>
                             <!-- Hamburger -->
-                            <div class="sm:hidden">
+                            <div class=" mt-2 sm:hidden">
                                 <button
-                                    class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
+                                    class="inline-flex items-center justify-center p-2 rounded-md text-black hover:text-gray-500 hover:bg-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
                                     @click="showingNavigationDropdown = !showingNavigationDropdown">
                                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                                         <path
@@ -73,21 +77,17 @@ const showingNavigationDropdown = ref(false);
                                     </svg>
                                 </button>
                             </div>
-
                         </div>
-
                     </div>
+
                 </div>
-                <!-- Responsive Settings Options -->
                 <div :class="{ 'block': showingNavigationDropdown, 'hidden': !showingNavigationDropdown }"
-                    class="sm:hidden bg-indigo-600 p-4">
-                    <div class="grid grid-flow-row gap-8 text-white justify-center">
-                        <h2>Pedir mi credito ya</h2>
-                        <h2>Requisitos</h2>
-                        <h2>Registarme</h2>
-                        <h2>¿Cómo pagar?</h2>
-                        <h2>¿Cuánto cuesta?</h2>
-                        <h2>Ayuda</h2>
+                    class="sm:hidden">
+                    <!-- Responsive Settings Options -->
+                    <div class="pt-4 pb-1 border-t border-gray-200">
+                        <div class="mt-3 space-y-1">
+                            <div class="ml-4">Options</div>
+                        </div>
                     </div>
                 </div>
             </nav>

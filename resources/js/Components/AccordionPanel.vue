@@ -14,9 +14,10 @@ const togglePanel = (event) => {
 </script>
 
 <template>
-    <div class="panel container shadow-sm bg-indigo-600 text-slate-50">
+    <div class="shadow-sm bg-indigo-600 text-slate-50">
         <button :arial-controls="'accordion-content-' + ariaTitle" :id="'accordion-control-' + ariaTitle"
-            @click.prevent="togglePanel" class="p-4 w-full font-semibold flex flex-row items-center justify-between">
+            @click.prevent="togglePanel"
+            class="ml-2 p-4 w-full font-semibold flex flex-row items-center justify-between">
             {{ title }}
             <span class="material-icons" v-if="showPanel">
                 <FontAwesomeIcon :icon="faArrowUp" class="px-2" />
